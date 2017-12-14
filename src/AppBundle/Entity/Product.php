@@ -3,6 +3,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * Many Products have many Purchases
+ *  @ManyToMany(targetEntity="Purchase")
+ * @joinTable(name="products_purchases")
+ *     joinColumns={@joinColumn(name="pro_oid", referencedColumnName="pro_id")},
+ *     inverseJoincolumns={@JoinColum(name="pur_oid", referencedColumnName="pur_oid")}
+ */
 
 /**
  * Product
@@ -34,6 +43,13 @@ class Product
      * @ORM\Column(name="pro_price", type="float")
      */
     private $price;
+
+    private $purchases;
+
+    public function __construct()
+    {
+        $this->purchases = new ArrayCollection();   
+    }
 
 
     /**
