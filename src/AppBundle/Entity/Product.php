@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Product
@@ -34,6 +35,13 @@ class Product
      * @ORM\Column(name="pro_price", type="float")
      */
     private $price;
+
+    private $purchases;
+
+    public function __construct()
+    {
+        $this->purchases = new ArrayCollection();   
+    }
 
 
     /**
