@@ -39,7 +39,7 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="usr_phone_number", type="string", length=9)
+     * @ORM\Column(name="usr_phone_number", type="string", length=10)
      */
     private $phoneNumber;
 
@@ -57,6 +57,12 @@ class User
      */
     private $zipCode;
 
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="usr_city", type="string", length=255)
+     */
+    private $city;
 
     /**
      * @ORM\OneToMany(targetEntity="Purchase", mappedBy="user")
@@ -202,6 +208,30 @@ class User
     public function getZipCode()
     {
         return $this->zipCode;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     *
+     * @return User
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
     }
 }
 
