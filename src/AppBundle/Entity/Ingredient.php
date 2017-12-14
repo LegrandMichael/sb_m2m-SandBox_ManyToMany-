@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Ingredient
  *
- * @ORM\Table(name="ingredient")
+ * @ORM\Table(name="ing_ingredient")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\IngredientRepository")
  */
 class Ingredient
@@ -15,7 +15,7 @@ class Ingredient
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="ing_oid", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -24,14 +24,14 @@ class Ingredient
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="ing_name", type="string", length=255)
      */
     private $name;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="stockPrice", type="float")
+     * @ORM\Column(name="ing_stock_price", type="float")
      */
     private $stockPrice;
 
