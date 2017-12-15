@@ -36,13 +36,12 @@ class Product
      */
     private $price;
 
-    /* private $purchases;
+    private $purchases;
 
     public function __construct()
     {
-        $this->purchases = new ArrayCollection();
-    } */
-
+        $this->purchases = new ArrayCollection();   
+    }
 
 
     /**
