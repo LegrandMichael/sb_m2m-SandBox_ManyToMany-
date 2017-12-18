@@ -49,7 +49,7 @@ class Purchase
     /**
      * Many Purchases have many Products.
      * @ORM\ManyToMany(targetEntity="Product")
-     * @ORM\JoinTable(name="npp_nn_pur_pro",
+     * @ORM\JoinTable(
      *      joinColumns={@ORM\JoinColumn(name="pur_oid", referencedColumnName="pur_oid")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="pro_oid", referencedColumnName="pro_oid")}
      *      )
