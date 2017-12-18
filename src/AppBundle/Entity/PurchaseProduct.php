@@ -7,15 +7,16 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PurchaseProduct
  *
- * @ORM\Table(name="purchase_product")
+ * @ORM\Table(name="npp_nn_pur_pro")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PurchaseProductRepository")
  */
 class PurchaseProduct
 {
+
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="npp_nn_pur_pro_oid", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -24,9 +25,24 @@ class PurchaseProduct
     /**
      * @var float
      *
-     * @ORM\Column(name="quantity", type="float")
+     * @ORM\Column(name="npp_nn_pur_pro_quantity", type="float")
      */
     private $quantity;
+
+    /**
+     * Many Features have One Product.
+     * Many PurchaseProducts have One Purchase
+     * @ORM\ManyToOne(targetEntity="Purchase", inversedBy="purchaseProducts")
+     * @ORM\JoinColumn(name="pur_oid", referencedColumnName="pur_oid")
+     */
+    private $purchase;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Product")
+     * @ORM\JoinColumn(name="pro_oid", referencedColumnName="pro_oid")
+     */
+    private $product;
+
 
 
     /**
