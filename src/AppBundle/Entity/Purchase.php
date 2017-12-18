@@ -16,6 +16,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Purchase
 {
+
     /**
      * @var int
      *
@@ -55,9 +56,18 @@ class Purchase
      */
     private $products;
 
+    /**
+     * One Product has Many Features.
+     * One Purchase has Many PurchaseProducts
+     * @ORM\OneToMany(targetEntity="PurchaseProduct", mappedBy="purchase")
+     */
+    private $purchaseProducts;
+
+    
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->purchaseProducts = new ArrayCollection();
     }
 
     /**
