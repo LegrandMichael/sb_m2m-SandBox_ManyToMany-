@@ -16,7 +16,7 @@ class PurchaseProduct
     /**
      * @var int
      *
-     * @ORM\Column(name="npp_nn_pur_pro_oid", type="integer")
+     * @ORM\Column(name="npp_oid", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -25,7 +25,7 @@ class PurchaseProduct
     /**
      * @var float
      *
-     * @ORM\Column(name="npp_nn_pur_pro_quantity", type="float")
+     * @ORM\Column(name="npp_quantity", type="float")
      */
     private $quantity;
 
